@@ -16,7 +16,7 @@ When setting these options consider the following:
 ## Determine system RAM and average pool size memory.
 - `free -h`
 - All fpm processes: `ps -ylC php-fpm7.0 --sort:rss`
-- Average memory: `ps --no-headers -o "rss,cmd" -C php-fpm7.0 | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'`
+- Average memory: `ps --no-headers -o "rss,cmd" -C php-fpm8.0 | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'`
 - All fpm processes memory: `ps -eo size,pid,user,command --sort -size | awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | grep php-fpm`
 
 ## Calculate max_children
